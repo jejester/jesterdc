@@ -10,7 +10,7 @@ import Skills from "./components/Skills";
 
 function App() {
     return (
-        <>
+        <div className='transition-colors duration-200 ease-linear'>
             <Navbar />
 
             <main>
@@ -28,7 +28,7 @@ function App() {
             </main>
 
             <Footer />
-        </>
+        </div>
     );
 }
 

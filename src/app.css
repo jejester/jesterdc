@@ -1,5 +1,72 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+    font-family: "Stack Sans Text";
+    src: url("../public/fonts/StackSansText-Regular.ttf") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BBH Bartle";
+    src: url("../public/fonts/BBHBartle-Regular.ttf") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@theme {
+    --font-stack: "Stack Sans Text", sans;
+    --font-bartle: "BBH Bartle", sans;
+}
 
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+:root {
+    --grid-color: #094fdb3f;
+    --bg-color: #ffffff;
+    --radial-color: #5fa1f721;
+}
+
+.dark {
+    --grid-color: #2560f363;
+    --bg-color: #000000;
+    --radial-color: #5fa1f734;
+}
+
+#hero-parent {
+    position: relative;
+}
+
+#hero-parent::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 60px 60px;
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        black 0%,
+        transparent 75%
+    );
+    mask-image: radial-gradient(circle at center, black 0%, transparent 75%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+#radial {
+    background: radial-gradient(
+        circle at top left,
+        var(--radial-color),
+        transparent 55%
+    );
+    transform: rotate3d(1, 1, 0, 60deg);
 }
