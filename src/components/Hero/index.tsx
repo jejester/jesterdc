@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, DotIcon } from "lucide-react";
 import HeroButtons from "./HeroButtons";
 import { useEffect, useState } from "react";
 
@@ -20,17 +20,21 @@ export default function Hero() {
             <div className='absolute inset-0' id='radial'></div>
             <section
                 id='hero'
-                className='flex relative min-h-screen max-w-full flex-col items-center justify-center text-center gap-2 px-6'
+                className='flex font-stack relative min-h-screen max-w-full flex-col items-center justify-center text-center gap-2 px-6'
             >
-                <h1 className='font-stack mb-4 text-6xl font-bold dark:text-white'>
+                <div className='absolute top-10 flex items-center justify-center gap-2 bg-gray-800 backdrop-blur-md px-3 py-2 rounded-full border border-gray-700'>
+                    <div className='bg-green-500 w-2.5 h-2.5 rounded-full animate-pulse'></div>
+                    <p className='text-gray-100'>Seeking new opportunities</p>
+                </div>
+                <h1 className='mb-4 text-6xl font-bold dark:text-white'>
                     Jester De La Cruz
                 </h1>
 
-                <h2 className=' font-stack mb-6 text-2xl font-medium text-blue-600'>
+                <h2 className=' mb-6 text-2xl font-medium text-blue-600'>
                     Full Stack Developer
                 </h2>
 
-                <p className='font-stack text-lg max-w-3xl leading text-gray-600 dark:text-gray-300'>
+                <p className='text-lg max-w-3xl leading text-gray-600 dark:text-gray-300'>
                     I build modern enterprise web applications using Laravel,
                     React, TypeScript, SQL Server, and AWS, focusing on scalable
                     systems and great user experiences.
